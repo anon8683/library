@@ -1,8 +1,16 @@
 let log = console.log;
-const userTitle = document.querySelector("#title");
-const userAuthor = document.querySelector("#author");
-const userPages = document.querySelector("#pages");
-const userRead = document.querySelector("#read");
+
+const form = document.querySelector("form");
+const userBook = document.querySelector("#submit");
+
+function openForm() {
+  document.querySelector("form").style.display = "flex";
+}
+
+//Hides our form when btn is clicked
+function closeform() {
+  document.querySelector("form").style.display = "none";
+}
 
 // Our array of books
 let myLibrary = [];
@@ -12,20 +20,13 @@ let author = "";
 let pages = undefined;
 let read = undefined;
 
-userTitle.addEventListener("change", (e) => {
-  title = userTitle.value;
-});
-
-userAuthor.addEventListener("change", (e) => {
-  author = userAuthor.value;
-});
-
-userPages.addEventListener("change", (e) => {
-  pages = userPages.value;
-});
-
-userRead.addEventListener("change", (e) => {
-  read = userRead.value;
+//Results of our users form inputs, puts results into our variables
+//Then creates our book, and adds it to our array
+userBook.addEventListener("click", (e) => {
+  title = document.querySelector("#bookTitle").value;
+  author = document.querySelector("#bookAuthor").value;
+  pages = document.querySelector("#bookPages").value;
+  read = document.querySelector("#hasRead").checked;
   addBookToLibrary(createBook());
 });
 
@@ -43,8 +44,8 @@ const Book = {
 //Adds our book to the library
 function addBookToLibrary(book) {
   myLibrary.push(book);
+
   log(myLibrary);
-  domTitle.textContent = Object.values(myLibrary[0])[0];
 }
 
 //This function creates a book object
@@ -57,6 +58,29 @@ function createBook() {
     books.read = read;
     return books;
   }
+}
+
+function creatCard() {
+  //Forgive, I don't know a better way to do this, yet.
+  //Hopefully react will save me in the future
+  const books = document.querySelector(".books");
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+  <card class="info">
+      <p class="title">The Dream of all things Possible</p>
+      <p class="author">by Tolkien</p>
+      <p class="pages">234 pages</p>
+      <div>
+          <p class="status">Status:</p>
+          <span>Read</span>
+      </div>
+  </card>
+  <div class="cardButton"><button class="delete">Delete</button></div>
+</div>`;
+
+  card.classList.add("card");
+  books.appendChild(card);
 }
 
 log(myLibrary);

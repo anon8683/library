@@ -9,6 +9,39 @@
     <script src="javascript.js" defer></script>
   </head>
   <body>
+    
+    <div class="form-popup" id="form">
+        <form action="#" method="post" class="form-container">
+            <h1>Add Book</h1>
+
+                <div class="input">
+                    <label for="bookTitle">Title:</label>
+                    <input type="text" name="bookTitle" id="bookTitle"  placeholder="Book title..">
+                </div>
+
+                <div class="input">
+                    <label for="bookAuthor">Author:</label>
+                    <input type="text" name="bookAuthor" id="bookAuthor"  placeholder="Book author..">
+                </div>
+
+                <div class="input">
+                    <label for="bookPages">Pages:</label>
+                    <input type="number" name="bookPages" id="bookPages"  placeholder="Amount of pages..">
+                </div>
+
+                <div class="input">
+                    <label for="hasRead">Have you read it?</label>
+                    <input type="checkbox" name="hasRead" id="hasRead">
+                    
+                </div>
+                
+
+
+            <button type="button" class="btn" onclick="closeform()" id="submit">Add book</button>
+            <button type="button" class="btn cancel" onclick="closeform()">Close</button>
+
+        </form>
+    </div>
     <header>
       <h1>Library</h1>
     </header>
@@ -52,33 +85,40 @@
             </div>
             <div class="buttons">
                 <button>Random</button>
-                <button>New book +</button>
+                <button class="open-button" onclick="openForm()">Add new book</button>
             </div>
       </div>
       <div class="books">
         <div class="card">
             <card class="info">
+                <p class="title">The Dream of all things Possible</p>
+                <p class="author">by Tolkien</p>
+                <p class="pages">234 pages</p>
+                <div>
+                    <p class="status">Status:</p>
+                    <span>Read</span>
+                </div>
+            </card>
+            <div class="cardButton"><button class="delete">Delete</button></div>
+        </div>
+        <div class="card">
+            <card class="info">
                 <p class="title">Lord of the Rings</p>
                 <p class="author">by Tolkien</p>
                 <p class="pages">234 pages</p>
-                <p class="status">Status:</p>
+                <div>
+                    <p class="status">Status:</p>
+                    <span>Read</span>
+                </div>
             </card>
-
             <div class="cardButton"><button class="delete">Delete</button></div>
         </div>
-        <div class="card">lol</div>
-        <div class="card">lol</div>
-        <div class="card">lol</div>
-        <div class="card">lol</div>
-        <div class="card">lol</div>
-        <div class="card">lol</div>
-
-      </div>
+      </div>   
     </main>
     <footer>
         <p class="myName">Joe Drennan-Barrs ©️</p>
         <a href="https://github.com/anon8683/etch-a-sketch">
-        <img src="images/GitHub-Mark-Light-32px.png" alt="github" class="github">
+        <img src="#" alt="github" class="github">
         </a>    
       </footer>
   </body>

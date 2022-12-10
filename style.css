@@ -46,28 +46,28 @@ h1 {
 .right {
   border: 2px solid var(--olive);
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
   background-color: var(--lOlive2);
 }
 /* ----------------------Left side of intro------------------------- */
 
 .left {
-  width: clamp(300px, 50%, 500px);
+  width: clamp(300px, 70%, 500px);
+  flex: 16 1 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 16 1 550px;
   min-width: 190px;
 }
 .description,
 #builtwith {
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 10px;
+  font-size: 0.1rem;
   letter-spacing: 0.9px;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: clamp(0.7rem, 2vw, 1rem);
   border-bottom: 1px solid rgba(173, 173, 173, 0.521);
 }
 
@@ -78,27 +78,27 @@ h1 {
 }
 /* ---------------------Right side of intro--------------------------- */
 .right {
-  width: clamp(500px, 50%, 500px);
-  flex: 16 1 250px;
+  width: clamp(500px, 30%, 500px);
+
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 5px;
+  align-items: center;
 }
 
 .stats {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  width: 50%;
+  width: 70%;
   max-width: fit-content;
 }
 
 .flex-together {
   display: flex;
   width: fit-content;
-  padding: 15px;
+  padding: 10px;
   gap: 10px;
   border-bottom: 1px solid rgba(173, 173, 173, 0.521);
 }
@@ -106,10 +106,9 @@ h1 {
 .buttons {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   width: 170px;
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 10px;
 }
 
 button {
@@ -131,16 +130,24 @@ button:hover {
   gap: 10px;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 3px 3px 20px -2px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 3px 3px 20px -2px rgba(0, 0, 0, 0.4); */
+}
+
+.bookshelf {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .card {
+  min-width: 300px;
   border-radius: 5px;
   padding: 15px;
   background-color: var(--lSand);
   border: 1px dotted var(--grey);
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 
@@ -194,6 +201,7 @@ button:hover {
 
 p {
   max-width: 70ch;
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 p {
@@ -218,35 +226,18 @@ footer {
   }
 }
 
-.check {
-  -webkit-appearance: none; /*hides the default checkbox*/
-  height: 20px;
-  width: 20px;
-  position: relative;
+@media only screen and (max-width: 450px) {
+  .flex-together {
+    padding: 2px;
+  }
+  .buttons {
+    gap: 3px;
+    padding: 5px;
+  }
 
-  transition: 0.1s;
-  background-color: #fe0006;
-  text-align: center;
-  font-weight: 600;
-  color: white;
-  border-radius: 3px;
-  outline: none;
-}
-
-.check:checked {
-  background-color: #0e9700;
-}
-
-.check:before {
-  content: "✖";
-}
-.check:checked:before {
-  content: "✔";
-}
-
-.check:hover {
-  cursor: pointer;
-  opacity: 0.8;
+  .right {
+    padding: 0;
+  }
 }
 
 .form-container {
@@ -274,9 +265,6 @@ footer {
 .input {
   display: flex;
   justify-content: space-between;
-}
-
-.btn {
 }
 
 #hasRead {

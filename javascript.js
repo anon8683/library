@@ -19,6 +19,7 @@ let title = "";
 let author = "";
 let pages = undefined;
 let read = undefined;
+let randomBooks = 5;
 
 //Results of our users form inputs, puts results into our variables
 //Then creates our book, and adds it to our array
@@ -97,4 +98,35 @@ function deleteCard(id) {
   log(index);
   document.getElementById(`${id}`).remove();
   delete myLibrary[index];
+}
+
+function callRandom() {
+  for (let index = 0; index < randomBooks; index++) {
+    addRandomBooks();
+  }
+}
+
+function addRandomBooks() {
+  let randomTitles = [
+    "Pride and Prejudice",
+    "The Hobbit",
+    "A Tale of Two Cities",
+    "The Raven",
+  ];
+  let randomAuthor = [
+    "Jane Austen",
+    "J.R.R. Tolkien",
+    "Charles Dickens",
+    "Edgar Allan Poe",
+  ];
+  let randomPages = [334, 366, 489, 64];
+  hasRead = true;
+
+  let randomChoice = Math.floor(Math.random() * 4);
+
+  title = randomTitles[randomChoice];
+  author = randomAuthor[randomChoice];
+  pages = randomPages[randomChoice];
+  addBookToLibrary(createBook());
+  creatCard();
 }

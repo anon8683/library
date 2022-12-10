@@ -85,12 +85,16 @@ function creatCard() {
       </div>
   </card>
   <div class="cardButton" id="a${bookNumber}">
-  <button class="delete"onclick="deleteCard(this.id)" id="a${bookNumber}">Delete</button></div>
+  <button class="delete"onclick="deleteCard(this.id)" id="a${bookNumber}">Delete</button>
+  </div>
 </div>`;
   //Card gets added
   books.appendChild(card);
 }
 
 function deleteCard(id) {
+  let index = +id.slice(1) - 1;
+  log(index);
   document.getElementById(`${id}`).remove();
+  delete myLibrary[index];
 }

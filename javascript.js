@@ -102,17 +102,19 @@ function createCard() {
 function changeStatus(id) {
   let box = document.getElementById(`${id}`);
   let bookIndex = +id.slice(-1) - 1;
+  let card = document.getElementById(`a${bookIndex + 1}`);
 
   if (box.getAttribute("checked") === null) {
     box.setAttribute("checked", "true");
     myLibrary[bookIndex].read = true;
+    card.classList.add("true");
     adjustStorage();
 
     return;
   }
   box.removeAttribute("checked");
-  log(id);
   myLibrary[bookIndex].read = false;
+  card.classList.remove("true");
   adjustStorage();
 }
 

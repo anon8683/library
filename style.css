@@ -10,6 +10,7 @@
   --grey: rgb(82, 82, 81);
   --orange: rgb(233, 182, 88);
   --red: rgb(244, 131, 122);
+  --green: rgba(157, 246, 157, 0.381);
 }
 
 body {
@@ -151,9 +152,14 @@ button:hover {
   justify-content: space-between;
 }
 
+.true {
+  background-color: var(--green);
+}
+
 .info {
   padding: 10px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   overflow: hidden;
   gap: 3px;
@@ -195,8 +201,19 @@ button:hover {
   font-weight: bold;
 }
 
-.status {
+.status,
+.checkBox {
+  margin: 0;
   margin-top: 20px;
+}
+
+.checkBox {
+  width: 20px;
+}
+
+.hasRead {
+  display: flex;
+  gap: 20px;
 }
 
 p {

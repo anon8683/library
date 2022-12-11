@@ -70,19 +70,24 @@ function createCard() {
   //Forgive, I don't know a better way to do this, yet.
   //Hopefully react will save me in the future
   let bookNumber = myLibrary.length;
+  let checkBoxStatus = "";
+  if (read === true) {
+    checkBoxStatus = "checked=true";
+  }
 
   const books = document.querySelector(".books");
   const card = document.createElement("div");
   card.classList.add("card");
+  card.classList.add(`${read}`);
   card.setAttribute("id", `a${bookNumber}`);
   card.innerHTML = `
   <card class="info" id="a${bookNumber}">
       <p class="title" id="a${bookNumber}">${title}</p>
       <p class="author" id="a${bookNumber}">by ${author}</p>
-      <p class="pages" id="a${bookNumber}">${pages}</p>
-      <div>
+      <p class="pages" id="a${bookNumber}">${pages} pages</p>
+      <div class="hasRead">
           <p class="status" id="a${bookNumber}">Status:</p>
-          <span>${read}</span>
+          <input type="checkbox" class="checkBox" ${checkBoxStatus} onclick="changeStatus(this.id)" id="readCheckBox${bookNumber}">
       </div>
   </card>
   <div class="cardButton" id="a${bookNumber}">
@@ -91,6 +96,15 @@ function createCard() {
 </div>`;
   //Card gets added
   books.appendChild(card);
+}
+
+function changeStatus(id) {
+  let box = document.getElementById(`${id}`);
+  if (box.getAttribute("checked") === null) {
+    box.setAttribute("checked", "true");
+    return;
+  }
+  box.removeAttribute("checked");
 }
 
 function deleteCard(id) {
@@ -148,24 +162,26 @@ function adjustStorage() {
 }
 
 function getStorage() {
-  //Gets our string and turns it back into array of objects, filters out null
   let saved_books = JSON.parse(localStorage.getItem("books")).filter((n) => n);
   return saved_books;
 }
 
+//On load, if storage is not null, parse the storage string into an object array
+// and filter out null spaces
+// For each item in new array, create a book from it
 window.addEventListener("load", (e) => {
-  log("saved books returned:");
-  myLibrary = getStorage();
-  cardsFromStorage(myLibrary);
-});
-
-function cardsFromStorage(myLibrary) {
-  for (let index = 0; index < myLibrary.length; index++) {
-    console.log(index);
-    title = myLibrary[index].title;
-    author = myLibrary[index].author;
-    pages = myLibrary[index].pages;
-    read = myLibrary[index].read;
-    createCard();
+  if (localStorage.getItem("books") != null) {
+    let saved_books = JSON.parse(localStorage.getItem("books")).filter(
+      (n) => n
+    );
+    log(saved_books);
+    for (let index = 0; index < saved_books.length; index++) {
+      title = saved_books[index].title;
+      author = saved_books[index].author;
+      pages = saved_books[index].pages;
+      read = saved_books[index].read;
+      addBookToLibrary(createBook());
+      createCard();
+    }
   }
-}
+});

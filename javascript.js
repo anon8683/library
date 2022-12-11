@@ -23,7 +23,7 @@ let read = undefined;
 //Results of our users form inputs, puts results into our variables
 //Then creates our book, and adds it to our array
 userBook.addEventListener("click", (e) => {
-  title = document.querySelector("#bookTitle").value;
+  title = document.querySelector("#bookTitle").vwalue;
   author = document.querySelector("#bookAuthor").value;
   pages = document.querySelector("#bookPages").value;
   read = document.querySelector("#hasRead").checked;
@@ -98,13 +98,22 @@ function createCard() {
   books.appendChild(card);
 }
 
+// Clicking a chexkbox will update it's attribute to check or not checked depending on previous state
 function changeStatus(id) {
   let box = document.getElementById(`${id}`);
+  let bookIndex = +id.slice(-1) - 1;
+
   if (box.getAttribute("checked") === null) {
     box.setAttribute("checked", "true");
+    myLibrary[bookIndex].read = true;
+    adjustStorage();
+
     return;
   }
   box.removeAttribute("checked");
+  log(id);
+  myLibrary[bookIndex].read = false;
+  adjustStorage();
 }
 
 function deleteCard(id) {

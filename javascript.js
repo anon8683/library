@@ -19,7 +19,6 @@ let title = "";
 let author = "";
 let pages = undefined;
 let read = undefined;
-let randomBooks = 5;
 
 //Results of our users form inputs, puts results into our variables
 //Then creates our book, and adds it to our array
@@ -29,7 +28,7 @@ userBook.addEventListener("click", (e) => {
   pages = document.querySelector("#bookPages").value;
   read = document.querySelector("#hasRead").checked;
   addBookToLibrary(createBook());
-  creatCard();
+  createCard();
 });
 
 //Event listener for delete buttons
@@ -48,6 +47,7 @@ const Book = {
 //Adds our book to the library
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  adjustStorage();
 
   log(myLibrary);
 }
@@ -66,7 +66,7 @@ function createBook() {
 
 let deleteButton = document.querySelectorAll(".delete");
 
-function creatCard() {
+function createCard() {
   //Forgive, I don't know a better way to do this, yet.
   //Hopefully react will save me in the future
   let bookNumber = myLibrary.length;
@@ -98,35 +98,74 @@ function deleteCard(id) {
   log(index);
   document.getElementById(`${id}`).remove();
   delete myLibrary[index];
+  adjustStorage();
 }
 
+//When radom data button is clicked call addRandomBooks multiple times
 function callRandom() {
-  for (let index = 0; index < randomBooks; index++) {
+  for (let index = 0; index < 5; index++) {
     addRandomBooks();
   }
 }
 
 function addRandomBooks() {
-  let randomTitles = [
-    "Pride and Prejudice",
-    "The Hobbit",
-    "A Tale of Two Cities",
-    "The Raven",
-  ];
-  let randomAuthor = [
-    "Jane Austen",
-    "J.R.R. Tolkien",
-    "Charles Dickens",
-    "Edgar Allan Poe",
-  ];
-  let randomPages = [334, 366, 489, 64];
-  hasRead = true;
+  let randomRead = [true, false, true, false];
 
+  let randomArray = [
+    {
+      title: "Pride and Prejudice",
+      author: "Jane Austen",
+      pages: 334,
+    },
+    {
+      title: "The Hobbit",
+      author: "J.R.R. Tolkien",
+      pages: 366,
+    },
+    {
+      title: "A Tale of Two Cities",
+      author: "Charles Dickens",
+      pages: 489,
+    },
+    {
+      title: "The Raven",
+      author: "Edgar Allan Poe",
+      pages: 64,
+    },
+  ];
   let randomChoice = Math.floor(Math.random() * 4);
+  title = randomArray[randomChoice].title;
+  author = randomArray[randomChoice].author;
+  pages = randomArray[randomChoice].pages;
+  read = randomRead[randomChoice];
 
-  title = randomTitles[randomChoice];
-  author = randomAuthor[randomChoice];
-  pages = randomPages[randomChoice];
   addBookToLibrary(createBook());
-  creatCard();
+  createCard();
+}
+
+function adjustStorage() {
+  localStorage.setItem("books", JSON.stringify(myLibrary));
+}
+
+function getStorage() {
+  //Gets our string and turns it back into array of objects, filters out null
+  let saved_books = JSON.parse(localStorage.getItem("books")).filter((n) => n);
+  return saved_books;
+}
+
+window.addEventListener("load", (e) => {
+  log("saved books returned:");
+  myLibrary = getStorage();
+  cardsFromStorage(myLibrary);
+});
+
+function cardsFromStorage(myLibrary) {
+  for (let index = 0; index < myLibrary.length; index++) {
+    console.log(index);
+    title = myLibrary[index].title;
+    author = myLibrary[index].author;
+    pages = myLibrary[index].pages;
+    read = myLibrary[index].read;
+    createCard();
+  }
 }

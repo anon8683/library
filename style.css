@@ -228,6 +228,7 @@ button:hover {
 p {
   max-width: 63ch;
   font-size: clamp(0.8rem, 2vw, 1rem);
+  transition: change 1s;
 }
 
 p {

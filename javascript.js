@@ -192,7 +192,7 @@ function callRandom() {
 
 // When random button is clicked, add a random set of books from this function
 function addRandomBooks() {
-  let randomRead = [true, false, true, false];
+  let randomRead = false;
 
   let randomArray = [
     {
@@ -215,12 +215,41 @@ function addRandomBooks() {
       author: "Edgar Allan Poe",
       pages: 64,
     },
+    {
+      title: "The Legend of Sleepy Hollow",
+      author: "Washington Irving",
+      pages: 108,
+    },
+    {
+      title: "The Tell-Tale Heart",
+      author: "Edgar Allan Poe",
+      pages: 31,
+    },
+    {
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      pages: 336,
+    },
+    {
+      title: "Harry Potter and the Sorcerer's Stone",
+      author: "J.K. Rowling",
+      pages: 309,
+    },
+    {
+      title: "The Book Thief",
+      author: "Markus Zusak",
+      pages: 552,
+    },
   ];
-  let randomChoice = Math.floor(Math.random() * 4);
+  let randomChoice = Math.floor(Math.random() * 9);
+  if (randomChoice > 5) {
+    randomRead = true;
+  }
+
   title = randomArray[randomChoice].title;
   author = randomArray[randomChoice].author;
   pages = randomArray[randomChoice].pages;
-  read = randomRead[randomChoice];
+  read = randomRead;
 
   addBookToLibrary(createBook());
   createCard();

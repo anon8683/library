@@ -12,10 +12,8 @@
   <body>
     <div class="form-popup" id="form">
       <form action="#" method="post" class="form-container" id="form1">
-
-
+        <button type="button" id="closed" onclick="closeform()">X</button>
         <div class="input">
-          <!-- <label for="bookTitle">Title:</label> -->
           <input
             type="text"
             name="bookTitle"
@@ -23,9 +21,7 @@
             placeholder="Book title.."
           />
         </div>
-
         <div class="input">
-          <!-- <label for="bookAuthor">Author:</label> -->
           <input
             type="text"
             name="bookAuthor"
@@ -33,9 +29,7 @@
             placeholder="Book author.."
           />
         </div>
-
         <div class="input">
-          <!-- <label for="bookPages">Pages:</label> -->
           <input
             type="number"
             name="bookPages"
@@ -43,17 +37,12 @@
             placeholder="Amount of pages.."
           />
         </div>
-
         <div class="input">
           <label for="hasRead">Have you read it?</label>
           <input type="checkbox" name="hasRead" id="hasRead" />
         </div>
-
         <button type="button" class="btn" onclick="closeform()" id="submit">
           Add book
-        </button>
-        <button type="button" class="btn cancel" onclick="closeform()">
-          Close
         </button>
       </form>
     </div>
@@ -93,34 +82,7 @@
                 <p id="booksReadResult">0</p>
                 <p id="booksUnreadResult">0</p>
             </div>
-            <!-- <div class="flex-together">
-                  
-                  <div class="word">
-                      <p>Total books:</p>
-                  </div>
-                  <div class="result">
-                      <p>20</p>
-                  </div>
-              </div>
-              <div class="flex-together">
-                  
-                <div class="word">
-                    <p>Books read:</p>
-                </div>
-                <div class="result">
-                    <p>20</p>
-                </div>
-            </div>
-            <div class="flex-together">
-                  
-                <div class="word">
-                    <p>Books unread:</p>
-                </div>
-                <div class="result">
-                    <p>20</p>
-                </div> -->
           </div>
-        <!-- </div> -->
         <div class="buttons">
           <button onclick="callRandom()">Random books</button>
           <button class="open-button" onclick="openForm()">Add new book +</button>
@@ -139,14 +101,3 @@
   </body>
 </html>
 
-<!-- <div class="card">
-    <card class="info">
-        <p class="title" >Lord of the Rings</p>
-        <p class="author">by Tolkien</p>
-        <p class="pages">234 pages</p>
-        <div>
-            <div class="cardButton"><button class="delete">Delete</button></div>
-        </div>
-    </card>
-    <div class="cardButton"><button class="delete">Delete</button></div>
-</div> -->

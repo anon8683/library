@@ -9,57 +9,93 @@
     <script src="javascript.js" defer></script>
   </head>
   <body>
-    
     <div class="form-popup" id="form">
-        <form action="#" method="post" class="form-container">
-            <h1>Add Book</h1>
+      <form action="#" method="post" class="form-container" id="form1">
+        <h1>Add Book</h1>
 
-                <div class="input">
-                    <label for="bookTitle">Title:</label>
-                    <input type="text" name="bookTitle" id="bookTitle"  placeholder="Book title..">
-                </div>
+        <div class="input">
+          <label for="bookTitle">Title:</label>
+          <input
+            type="text"
+            name="bookTitle"
+            id="bookTitle"
+            placeholder="Book title.."
+          />
+        </div>
 
-                <div class="input">
-                    <label for="bookAuthor">Author:</label>
-                    <input type="text" name="bookAuthor" id="bookAuthor"  placeholder="Book author..">
-                </div>
+        <div class="input">
+          <label for="bookAuthor">Author:</label>
+          <input
+            type="text"
+            name="bookAuthor"
+            id="bookAuthor"
+            placeholder="Book author.."
+          />
+        </div>
 
-                <div class="input">
-                    <label for="bookPages">Pages:</label>
-                    <input type="number" name="bookPages" id="bookPages"  placeholder="Amount of pages..">
-                </div>
+        <div class="input">
+          <label for="bookPages">Pages:</label>
+          <input
+            type="number"
+            name="bookPages"
+            id="bookPages"
+            placeholder="Amount of pages.."
+          />
+        </div>
 
-                <div class="input">
-                    <label for="hasRead">Have you read it?</label>
-                    <input type="checkbox" name="hasRead" id="hasRead">
-                    
-                </div>
-                
+        <div class="input">
+          <label for="hasRead">Have you read it?</label>
+          <input type="checkbox" name="hasRead" id="hasRead" />
+        </div>
 
-
-            <button type="button" class="btn" onclick="closeform()" id="submit">Add book</button>
-            <button type="button" class="btn cancel" onclick="closeform()">Close</button>
-
-        </form>
+        <button type="button" class="btn" onclick="closeform()" id="submit">
+          Add book
+        </button>
+        <button type="button" class="btn cancel" onclick="closeform()">
+          Close
+        </button>
+      </form>
     </div>
     <header>
-      <h1>Library</h1>
+    <img src="images/books-svgrepo-com.svg" alt="" id="svg" class="header">
+      <h1 class="header">myLibrary</h1>
     </header>
     <main class="article">
       <div class="intro">
         <div class="left">
           <p class="description">
-            This is a simple application that allows you to keep track of your books! Add books to keep track of them, log information about them such as their title, author, pages and whether you've read that book or not.
-            
+            This is a simple application that allows you to keep track of your
+            books!<br /><br />
+            Add books to keep track of them, log information about them such as
+            their title, author, pages and whether you've read that book or not.
+            <br /><br />
           </p>
-          <p id="builtwith">Built with vanilla JS, HTML and CSS. Saves books using localStorage</p>
+          <p id="builtwith">
+            Built with vanilla JS, HTML and CSS. Saves books using localStorage.
+          </p>
         </div>
         <div class="right">
-            <div class="stats">
-              <div class="flex-together">
+          <div class="stats">
+            <div class="words">
+                <div id="totalBooks">
+                  <p>Total books:</p>
+                </div>
+                <div id="booksRead">
+                  <p>Books read:</p>
+                </div>
+                <div id="booksUnread">
+                  <p>Books unread:</p>
+                </div>
+            </div>
+            <div class="result">
+                <p id="totalBooksResult">20</p>
+                <p id="booksReadResult">21</p>
+                <p id="booksUnreadResult">30</p>
+            </div>
+            <!-- <div class="flex-together">
                   
                   <div class="word">
-                      <p>Books Read:</p>
+                      <p>Total books:</p>
                   </div>
                   <div class="result">
                       <p>20</p>
@@ -68,7 +104,7 @@
               <div class="flex-together">
                   
                 <div class="word">
-                    <p>Books Read:</p>
+                    <p>Books read:</p>
                 </div>
                 <div class="result">
                     <p>20</p>
@@ -77,33 +113,30 @@
             <div class="flex-together">
                   
                 <div class="word">
-                    <p>Books Read:</p>
+                    <p>Books unread:</p>
                 </div>
                 <div class="result">
                     <p>20</p>
-                </div>
-            </div>
-            </div>
-            <div class="buttons">
-                <button onclick="callRandom()">Random</button>
-                <button class="open-button" onclick="openForm()">Add new book</button>
-            </div>
+                </div> -->
+          </div>
+        <!-- </div> -->
+        <div class="buttons">
+          <button onclick="callRandom()">Random books</button>
+          <button class="open-button" onclick="openForm()">Add new book +</button>
+        </div>
       </div>
       <div class="bookshelf">
-          <div class="books">
+        <div class="books"></div>
       </div>
-        
-      </div>   
     </main>
     <footer>
-        <p class="myName">Joe Drennan-Barrs ©️</p>
-        <a href="https://github.com/anon8683/etch-a-sketch">
-        <img src="#" alt="github" class="github">
-        </a>    
-      </footer>
+      <p class="myName">Joe Drennan-Barrs ©️</p>
+      <a href="https://github.com/anon8683/library">
+        <img src="images/github-mark.png" alt="github" class="github" />
+      </a>
+    </footer>
   </body>
 </html>
-
 
 <!-- <div class="card">
     <card class="info">

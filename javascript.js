@@ -5,11 +5,13 @@ const userBook = document.querySelector("#submit");
 
 function openForm() {
   document.querySelector("form").style.display = "flex";
+  document.getElementById("form").style.display = "block";
 }
 
 //Hides our form when btn is clicked
 function closeform() {
   document.querySelector("form").style.display = "none";
+  document.getElementById("form").style.display = "none";
 }
 
 // Our array of books
@@ -23,7 +25,7 @@ let read = undefined;
 //Results of our users form inputs, puts results into our variables
 //Then creates our book, and adds it to our array
 userBook.addEventListener("click", (e) => {
-  title = document.querySelector("#bookTitle").vwalue;
+  title = document.querySelector("#bookTitle").value;
   author = document.querySelector("#bookAuthor").value;
   pages = document.querySelector("#bookPages").value;
   read = document.querySelector("#hasRead").checked;
@@ -86,7 +88,7 @@ function createCard() {
       <p class="author" id="a${bookNumber}">by ${author}</p>
       <p class="pages" id="a${bookNumber}">${pages} pages</p>
       <div class="hasRead">
-          <p class="status" id="a${bookNumber}">Status:</p>
+          <p class="status" id="a${bookNumber}">Finished:</p>
           <input type="checkbox" class="checkBox" ${checkBoxStatus} onclick="changeStatus(this.id)" id="readCheckBox${bookNumber}">
       </div>
   </card>

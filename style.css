@@ -125,9 +125,30 @@ button {
   background-color: var(--olive);
 }
 
+#submit:hover,
 button:hover {
   background-color: rgb(228, 191, 122);
+  scale: 1.025;
+  border: 1px solid black;
+  transition: 0.2s;
+  cursor: pointer;
 }
+
+input:focus {
+  border: 1px solid orange;
+  outline: none;
+}
+
+.checkBox {
+  cursor: pointer;
+}
+
+.checkBox:hover {
+  scale: 1.1;
+
+  transition: 0.2s;
+}
+
 /* -----------------------Bookshelf----------------------- */
 
 .books {
@@ -317,7 +338,10 @@ header {
   background-color: var(--lSand);
   padding: 25px;
   border-radius: 5px;
-  border: 2px solid var(--orange);
+  border: 2px solid rgb(8, 12, 7);
+  background: url("images/whatsapp.jpg");
+  background-size: cover;
+  box-shadow: 5px 5px 15px 5px #000000;
 }
 
 #submit,
@@ -350,5 +374,4 @@ header {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.85); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
 }

@@ -121,8 +121,8 @@ h1 {
 button {
   border-radius: 10px;
   height: 45px;
-  border: 1px solid var(--olive);
-  background-color: rgb(233, 182, 88);
+  border: 1px solid var(--orange);
+  background-color: var(--olive);
 }
 
 button:hover {
@@ -314,7 +314,7 @@ header {
   right: 0;
   text-align: center;
   background-color: var(--lSand);
-  padding: 35px;
+  padding: 25px;
   border-radius: 5px;
   border: 2px solid var(--orange);
 }

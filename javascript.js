@@ -72,17 +72,40 @@ function createBook() {
 
 let deleteButton = document.querySelectorAll(".delete");
 
+function totalbooks() {
+  const totalBooks = document.getElementById("totalBooksResult");
+  const booksRead = document.getElementById("booksReadResult");
+
+  let realTotal = myLibrary.filter((n) => n);
+  totalBooks.textContent = `${realTotal.length}`;
+
+  let read = 0;
+
+  for (let i = 0; i < realTotal.length; i++) {
+    if (realTotal[i].read === true) {
+      read++;
+    }
+  }
+  booksRead.textContent = `${read}`;
+
+  const booksUnread = document.getElementById("booksUnreadResult");
+  let unreadBooks = realTotal.length - read;
+  booksUnread.textContent = `${unreadBooks}`;
+}
+
 function createCard() {
   //Forgive, I don't know a better way to do this, yet.
   //Hopefully react will save me in the future
+  totalbooks();
+  const books = document.querySelector(".books");
+  const card = document.createElement("div");
+
   let bookNumber = myLibrary.length;
   let checkBoxStatus = "";
   if (read === true) {
     checkBoxStatus = "checked=true";
   }
 
-  const books = document.querySelector(".books");
-  const card = document.createElement("div");
   card.classList.add("card");
   card.classList.add(`${read}`);
   card.setAttribute("id", `a${bookNumber}`);
@@ -115,6 +138,7 @@ function changeStatus(id) {
     myLibrary[bookIndex].read = true;
     card.classList.add("true");
     adjustStorage();
+    totalbooks();
 
     return;
   }
@@ -122,6 +146,7 @@ function changeStatus(id) {
   myLibrary[bookIndex].read = false;
   card.classList.remove("true");
   adjustStorage();
+  totalbooks();
 }
 
 function deleteCard(id) {
@@ -129,6 +154,7 @@ function deleteCard(id) {
   log(index);
   document.getElementById(`${id}`).remove();
   delete myLibrary[index];
+  totalbooks();
   adjustStorage();
 }
 

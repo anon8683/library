@@ -298,8 +298,9 @@ header {
 .form-container {
   display: none;
   width: 250px;
-  height: 300px;
+  height: 350px;
   flex-direction: column;
+  justify-content: center;
   position: absolute;
   gap: 20px;
   align-items: center;

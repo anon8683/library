@@ -31,6 +31,10 @@ userBook.addEventListener("click", (e) => {
   read = document.querySelector("#hasRead").checked;
   addBookToLibrary(createBook());
   createCard();
+  document.querySelector("#bookTitle").value = "";
+  document.querySelector("#bookAuthor").value = "";
+  document.querySelector("#bookPages").value = "";
+  document.querySelector("#hasRead").checked = undefined;
 });
 
 //Event listener for delete buttons

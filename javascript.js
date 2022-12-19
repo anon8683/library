@@ -39,17 +39,6 @@ userBook.addEventListener("click", (e) => {
 	document.querySelector("#hasRead").checked = undefined;
 });
 
-//Our constructor
-// const Book = {
-// 	info: function () {
-// 		let read = "read it";
-// 		if (this.read === false) {
-// 			read = "not read it";
-// 		}
-// 		return `${this.title} by ${this.author}, ${this.pages}, ${read}`;
-// 	},
-// };
-
 class Book {
 	constructor(title, author, pages, read) {
 		this.title = title;
@@ -74,8 +63,8 @@ function addBookToLibrary(book) {
 
 //This function creates a book object
 function createBook() {
-	const books = new Book(title, author, pages, read);
-	return books;
+	const book = new Book(title, author, pages, read);
+	return book;
 }
 
 function totalbooks() {

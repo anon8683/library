@@ -25,6 +25,17 @@ function closeform() {
 //Results of our users form inputs, puts results into our variables
 //Then creates our book, and adds it to our array, creates card from given inputs
 userBook.addEventListener("click", (e) => {
+	const titlex = document.getElementById("bookTitle");
+	const authorx = document.getElementById("bookAuthor");
+	const pagesx = document.getElementById("bookPages");
+	if (
+		!titlex.validity.valid ||
+		!authorx.validity.valid ||
+		!pagesx.validity.valid
+	) {
+		return;
+	}
+
 	title = document.querySelector("#bookTitle").value;
 	author = document.querySelector("#bookAuthor").value;
 	pages = document.querySelector("#bookPages").value;
@@ -37,6 +48,7 @@ userBook.addEventListener("click", (e) => {
 	document.querySelector("#bookAuthor").value = "";
 	document.querySelector("#bookPages").value = "";
 	document.querySelector("#hasRead").checked = undefined;
+	closeform();
 });
 
 class Book {

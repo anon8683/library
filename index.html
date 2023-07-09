@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="form-popup" id="form">
-      <form action="#" method="post" class="form-container" id="form1">
+      <form action="#" method="post" class="form-container" id="form1" onsubmit="return false">
         <button type="button" id="closed" onclick="closeform()">X</button>
         <div class="input">
           <input
@@ -19,6 +19,7 @@
             name="bookTitle"
             id="bookTitle"
             placeholder="Book title.."
+            required
           />
         </div>
         <div class="input">
@@ -27,6 +28,7 @@
             name="bookAuthor"
             id="bookAuthor"
             placeholder="Book author.."
+            required
           />
         </div>
         <div class="input">
@@ -35,13 +37,14 @@
             name="bookPages"
             id="bookPages"
             placeholder="Amount of pages.."
+            required
           />
         </div>
         <div class="input">
           <label for="hasRead">Have you read it?</label>
           <input type="checkbox" name="hasRead" id="hasRead" />
         </div>
-        <button type="button" class="btn" onclick="closeform()" id="submit">
+        <button type="submit" class="btn"  id="submit">
           Add book
         </button>
       </form>

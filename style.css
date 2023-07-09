@@ -2,398 +2,398 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 :root {
-  --olive: rgb(204, 214, 166);
-  --lOlive: rgb(218, 226, 182);
-  --lOlive2: rgba(218, 226, 182, 0.719);
-  --sand: rgb(244, 234, 213);
-  --lSand: rgb(255, 251, 233);
-  --grey: rgb(82, 82, 81);
-  --orange: rgb(233, 182, 88);
-  --red: rgb(244, 131, 122);
-  --green: rgba(157, 246, 157, 0.381);
+	--olive: rgb(204, 214, 166);
+	--lOlive: rgb(218, 226, 182);
+	--lOlive2: rgba(218, 226, 182, 0.719);
+	--sand: rgb(244, 234, 213);
+	--lSand: rgb(255, 251, 233);
+	--grey: rgb(82, 82, 81);
+	--orange: rgb(233, 182, 88);
+	--red: rgb(244, 131, 122);
+	--green: rgba(157, 246, 157, 0.381);
 }
 
 body {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  background-color: var(--sand);
-  font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background-color: var(--sand);
+	font-family: "Roboto", sans-serif;
 }
 
 h1 {
-  text-align: center;
-  font-family: "Fredoka One", cursive;
-  text-decoration: underline;
+	text-align: center;
+	font-family: "Fredoka One", cursive;
+	text-decoration: underline;
 }
 
 .article {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  background-color: var(--sand);
-  width: 80%;
+	display: flex;
+	flex-direction: column;
+	padding: 50px;
+	background-color: var(--sand);
+	width: 80%;
 }
 
 .intro {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 .left,
 .right {
-  border: 2px solid var(--olive);
-  border-style: groove;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: var(--lSand);
+	border: 2px solid var(--olive);
+	border-style: groove;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: var(--lSand);
 }
 /* ----------------------Left side of intro------------------------- */
 
 .left {
-  width: clamp(300px, 70%, 500px);
-  flex: 16 1 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-width: 190px;
+	width: clamp(300px, 70%, 500px);
+	flex: 16 1 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-width: 190px;
 }
 .description,
 #builtwith {
-  padding: 15px;
-  font-size: 0.1rem;
-  letter-spacing: 0.4px;
-  line-height: 1.3rem;
+	padding: 15px;
+	font-size: 0.1rem;
+	letter-spacing: 0.4px;
+	line-height: 1.3rem;
 }
 
 .description {
-  font-size: clamp(0.7rem, 2vw, 1rem);
-  border-bottom: 1px solid rgba(173, 173, 173, 0.521);
-  font-weight: 600;
-  color: var(--grey);
+	font-size: clamp(0.7rem, 2vw, 1rem);
+	border-bottom: 1px solid rgba(173, 173, 173, 0.521);
+	font-weight: 600;
+	color: var(--grey);
 }
 
 #builtwith {
-  font-size: 0.7rem;
-  font-style: italic;
-  color: var(--grey);
+	font-size: 0.7rem;
+	font-style: italic;
+	color: var(--grey);
 }
 /* ---------------------Right side of intro--------------------------- */
 .right {
-  width: clamp(500px, 30%, 500px);
+	width: clamp(500px, 30%, 500px);
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .stats {
-  display: flex;
-  gap: 20px;
-  padding: 10px;
-  width: 70%;
-  max-width: fit-content;
+	display: flex;
+	gap: 20px;
+	padding: 10px;
+	width: 70%;
+	max-width: fit-content;
 }
 
 .flex-together {
-  display: flex;
-  width: fit-content;
-  padding: 10px;
-  gap: 10px;
-  border-bottom: 1px solid rgba(173, 173, 173, 0.521);
+	display: flex;
+	width: fit-content;
+	padding: 10px;
+	gap: 10px;
+	border-bottom: 1px solid rgba(173, 173, 173, 0.521);
 }
 
 .buttons {
-  display: flex;
-  flex-direction: column;
-  width: 170px;
-  gap: 10px;
-  padding: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 170px;
+	gap: 10px;
+	padding: 10px;
 }
 
 button {
-  border-radius: 10px;
-  height: 45px;
-  border: 1px solid var(--orange);
-  background-color: var(--olive);
+	border-radius: 10px;
+	height: 45px;
+	border: 1px solid var(--orange);
+	background-color: var(--olive);
 }
 
 #submit:hover,
 button:hover {
-  background-color: rgb(228, 191, 122);
-  scale: 1.025;
-  border: 1px solid black;
-  transition: 0.2s;
-  cursor: pointer;
+	background-color: rgb(228, 191, 122);
+	scale: 1.025;
+	border: 1px solid black;
+	transition: 0.2s;
+	cursor: pointer;
 }
 
 input:focus {
-  border: 1px solid orange;
-  outline: none;
+	border: 1px solid orange;
+	outline: none;
 }
 
 .checkBox {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .checkBox:hover {
-  scale: 1.1;
+	scale: 1.1;
 
-  transition: 0.2s;
+	transition: 0.2s;
 }
 
 /* -----------------------Bookshelf----------------------- */
 
 .books {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 20px;
-  border-radius: 5px;
-  /* box-shadow: 3px 3px 20px -2px rgba(0, 0, 0, 0.4); */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 20px;
+	border-radius: 5px;
+	/* box-shadow: 3px 3px 20px -2px rgba(0, 0, 0, 0.4); */
 }
 
 .bookshelf {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 .card {
-  min-width: 300px;
-  border-radius: 5px;
-  padding: 15px;
-  background-color: var(--lSand);
-  border: 1px dotted var(--grey);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+	min-width: 300px;
+	border-radius: 5px;
+	padding: 15px;
+	background-color: var(--lSand);
+	border: 1px dotted var(--grey);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
 }
 
 .true {
-  background-color: var(--green);
+	background-color: var(--green);
 }
 
 .info {
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  overflow: hidden;
-  gap: 3px;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	overflow: hidden;
+	gap: 3px;
 }
 
 .cardButton {
-  align-self: flex-end;
-  padding: 10px;
+	align-self: flex-end;
+	padding: 10px;
 }
 
 .delete {
-  font-size: 0.6rem;
-  font-weight: 600;
-  border: 1px solid black;
-  color: var(--grey);
-  width: 60px;
-  height: 25px;
-  border-radius: 3px;
-  background-color: var(--red);
+	font-size: 0.6rem;
+	font-weight: 600;
+	border: 1px solid black;
+	color: var(--grey);
+	width: 60px;
+	height: 25px;
+	border-radius: 3px;
+	background-color: var(--red);
 }
 
 .title {
-  max-width: 20ch;
-  font-size: 1.5rem;
-  color: var(--grey);
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.668);
-  font-family: "Playfair Display", serif;
+	max-width: 20ch;
+	font-size: 1.5rem;
+	color: var(--grey);
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.668);
+	font-family: "Playfair Display", serif;
 }
 
 .author {
-  font-size: 0.9rem;
-  font-style: italic;
-  border-bottom: 1px solid green;
+	font-size: 0.9rem;
+	font-style: italic;
+	border-bottom: 1px solid green;
 }
 
 .pages {
-  margin-top: 5px;
-  font-size: 0.7rem;
-  font-weight: bold;
+	margin-top: 5px;
+	font-size: 0.7rem;
+	font-weight: bold;
 }
 
 .status,
 .checkBox {
-  margin: 0;
-  margin-top: 20px;
+	margin: 0;
+	margin-top: 20px;
 }
 
 .checkBox {
-  width: 20px;
+	width: 20px;
 }
 
 .hasRead {
-  display: flex;
-  gap: 20px;
+	display: flex;
+	gap: 20px;
 }
 
 p {
-  max-width: 63ch;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  transition: change 1s;
+	max-width: 63ch;
+	font-size: clamp(0.8rem, 2vw, 1rem);
+	transition: change 1s;
 }
 
 p {
-  margin: 0;
+	margin: 0;
 }
 
 /* -------Footer------- */
 footer {
-  width: 100%;
-  height: 50px;
-  margin-top: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background-color: var(--olive);
-  border-top: 1px solid var(--orange);
+	width: 100%;
+	height: 50px;
+	margin-top: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background-color: var(--olive);
+	border-top: 1px solid var(--orange);
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  padding-top: 15px;
+	display: flex;
+	flex-direction: row;
+	padding-top: 15px;
 }
 
 #svg {
-  width: 40px;
+	width: 40px;
 }
 
 .header {
-  margin: 0;
-  padding: 10px;
+	margin: 0;
+	padding: 10px;
 }
 
 .github {
-  width: 35px;
+	width: 35px;
 }
 @media only screen and (max-width: 981px) {
-  .books {
-    justify-content: center;
-  }
+	.books {
+		justify-content: center;
+	}
 }
 
 @media only screen and (max-width: 450px) {
-  .flex-together {
-    padding: 2px;
-  }
-  .buttons {
-    gap: 3px;
-    padding: 5px;
-  }
+	.flex-together {
+		padding: 2px;
+	}
+	.buttons {
+		gap: 3px;
+		padding: 5px;
+	}
 
-  .right {
-    padding: 0;
-  }
-  .article {
-    padding-top: 15px;
-  }
-  .books {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .card {
-    padding: 7.5px;
-  }
-  #closed {
-    scale: 1.25;
-  }
+	.right {
+		padding: 0;
+	}
+	.article {
+		padding-top: 15px;
+	}
+	.books {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+	.card {
+		padding: 7.5px;
+	}
+	#closed {
+		scale: 1.25;
+	}
 }
 
 .form-container {
-  display: none;
-  width: 250px;
-  height: 350px;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  gap: 30px;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  background-color: var(--lSand);
-  padding: 25px;
-  border-radius: 5px;
-  border: 2px solid rgb(8, 12, 7);
-  background: url("images/whatsapp.jpg");
-  background-size: cover;
-  box-shadow: 5px 5px 15px 5px #000000;
-  padding-bottom: 45px;
+	display: none;
+	width: 250px;
+	height: 350px;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	gap: 30px;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: var(--lSand);
+	padding: 25px;
+	border-radius: 5px;
+	border: 2px solid rgb(8, 12, 7);
+	background: url("images/whatsapp.jpg");
+	background-size: cover;
+	box-shadow: 5px 5px 15px 5px #000000;
+	padding-bottom: 45px;
 }
 
 #closed {
-  position: relative;
-  top: -25px;
-  left: 125px;
-  right: 0;
-  bottom: 0px;
-  height: 25px;
-  border: 1px solid black;
-  border-radius: 0px;
-  padding-top: 2px;
-  font-weight: 600;
-  border-radius: 20px;
-  background-color: rgb(241, 170, 170);
-  scale: 1.15;
+	position: relative;
+	top: -25px;
+	left: 125px;
+	right: 0;
+	bottom: 0px;
+	height: 25px;
+	border: 1px solid black;
+	border-radius: 0px;
+	padding-top: 2px;
+	font-weight: 600;
+	border-radius: 20px;
+	background-color: rgb(241, 170, 170);
+	scale: 1.15;
 }
 
 #closed:hover {
-  background-color: rgb(248, 129, 129);
-  border: 1px solid rgb(240, 93, 93);
-  scale: 1;
+	background-color: rgb(248, 129, 129);
+	border: 1px solid rgb(240, 93, 93);
+	scale: 1;
 }
 
 #submit,
 .cancel {
-  min-width: 200px;
-  background-color: var(--olive);
-  border: 1px solid var(--orange);
+	min-width: 200px;
+	background-color: var(--olive);
+	border: 1px solid var(--orange);
 }
 
 .input {
-  border-radius: 10px;
-  scale: 1.1;
-  outline: 5px;
+	border-radius: 10px;
+	scale: 1.1;
+	outline: 5px;
 }
 
 #hasRead {
-  scale: 1.5;
-  margin-left: 10px;
+	scale: 1.5;
+	margin-left: 10px;
 }
 
 #form {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+	position: fixed; /* Sit on top of the page content */
+	display: none; /* Hidden by default */
+	width: 100%; /* Full width (cover the whole page) */
+	height: 100%; /* Full height (cover the whole page) */
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.85); /* Black background with opacity */
+	z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }
